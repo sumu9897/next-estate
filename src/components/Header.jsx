@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 import React from "react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   return (
@@ -13,13 +14,37 @@ const Header = () => {
           </h1>
         </Link>
         <form>
-            <input type="text" placeholder="Search..." className="bg-transparent focus:outline-none items-center" />
-            <button> <FaSearch className="text-slate-600"/></button>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent focus:outline-none items-center"
+          />
+          <button>
+            {" "}
+            <FaSearch className="text-slate-600" />
+          </button>
         </form>
         <ul className="flex gap-4">
-            <Link href={'/'}><li className="hidden md:inline text-slate-700 hover:underline">Home</li></Link>
-            <Link href={'/about'}><li className="hidden md:inline text-slate-700 hover:underline">About</li></Link>
-            <Link href={'/sign-in'}><li className="hidden md:inline text-slate-700 hover:underline">Sign In</li></Link>
+          <Link href={"/"}>
+            <li className="hidden md:inline text-slate-700 hover:underline">
+              Home
+            </li>
+          </Link>
+          <Link href={"/about"}>
+            <li className="hidden md:inline text-slate-700 hover:underline">
+              About
+            </li>
+          </Link>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <Link href={"/sign-in"}>
+              <li className="hidden md:inline text-slate-700 hover:underline">
+                Sign In
+              </li>
+            </Link>
+          </SignedOut>
         </ul>
       </div>
     </header>
