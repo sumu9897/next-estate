@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link href={"/"}>
+        <Link href="/">
           <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
             <span className="text-gray-600">Mohammad</span>
             <span className="text-yellow-300">Estate</span>
@@ -20,17 +20,17 @@ const Header = () => {
             className="bg-transparent focus:outline-none items-center"
           />
           <button>
-            {" "}
+
             <FaSearch className="text-slate-600" />
           </button>
         </form>
         <ul className="flex gap-4">
-          <Link href={"/"}>
+          <Link href="/">
             <li className="hidden md:inline text-slate-700 hover:underline">
               Home
             </li>
           </Link>
-          <Link href={"/about"}>
+          <Link href="/about">
             <li className="hidden md:inline text-slate-700 hover:underline">
               About
             </li>
@@ -39,7 +39,7 @@ const Header = () => {
             <UserButton />
           </SignedIn>
           <SignedOut>
-            <Link href={"/sign-in"}>
+            <Link href="/sign-in">
               <li className="hidden md:inline text-slate-700 hover:underline">
                 Sign In
               </li>
